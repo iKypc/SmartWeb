@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap');
+
+  
+*, *:before, *:after
+  padding: 0
+  margin: 0
+  border: 0
+  box-sizing: border-box
+
+body, html
+  height: 100%
+  font-family: 'Titillium Web', sans-serif
+body  
+  background-image: url("../img/header_bg.jpg")
+  background-repeat: no-repeat
+  background-size: cover
+  height: 100vh
+  
+
+
+  
+
+.container
+  max-width: 1180px
+  margin: 0px auto
+  padding: 0px 10px
+
+.wrapper
+  height: 100%
+  .header
+    display: flex
+    flex-direction: column
+    height: 100vh
+    //background:  #21211f7a   
+    &::before
+    content: ""
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background:  #21211f7a    
+    &__top
+      position: fixed
+      width: 100%
+      top: 0
+      left: 0
+      background: #21211ff3
+      &::before
+        display: none
+        content: ""
+        position: absolute
+        left: 0
+        top: 0
+        z-index: 1
+        width: 100%
+        height: 100%
+        background:  #21211f 
+      &_wrap
+        position: relative
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 15px 
+        &_logo
+          height: 50px
+          margin-right: 15px
+          z-index: 2
+          a
+            img
+              height: 100%
+              transition: all .5s ease-out
+            &:hover img
+              transform: rotate(15deg)
+        &_nav
+          height: 50px
+          display: flex
+          align-items: center
+          justify-content: center
+          white-space: nowrap
+          a
+            font-size: 12px
+            font-weight: bold
+            display: block
+            line-height: 50px
+            text-align: center
+            color: rgba(255, 255, 255, 0.71)
+            text-decoration: none
+            text-transform: uppercase
+            letter-spacing: 2px
+            margin-right: 15px
+            position: relative
+            padding: 0 10px
+            &:last-child
+              margin-right: 0
+            &::before
+              content: ""
+              position: absolute
+              top: 0
+              right: 0
+              bottom: 0
+              left: 0
+              border-bottom: solid 2px #FAC921
+              border-top: solid 2px #FAC921
+              transition: 0.5s
+              transform: scaleX(0)
+            &:hover::before, &.active::before
+              transform: scaleX(1)
+            &:hover, &.active
+              color: #FAC921
+            
+            // &::after
+            //   content: ""
+            //   position: absolute
+            //   top: 0
+            //   right: 0
+            //   bottom: 0
+            //   left: 0
+            //   border-right: solid 2px
+            //   border-left: solid 2px
+            //   transition: 0.5s
+            //   transform: scaleY(0)
+            // &:hover::after
+            //   transform: scaleY(1)
+    &__burger
+      display: none
+      z-index: 2
+    &__main
+      display: flex
+      flex-grow: 1
+      align-items: center
+      justify-content: center
+      flex-direction: column
+      h1
+        color: white
+        font-size: 6vw
+        margin: 0 auto
+        text-shadow: 1px 1px #21211f59
+        span
+          color: #FAC921
+      h2 
+        color: rgba(255, 255, 255, 0.71)
+        text-transform: uppercase
+        font-size: 11px
+        text-align: center
+        font-weight: bold
+        letter-spacing: 6px
+        background: #21211fa8
+        padding: 15px 30px
+      a
+        display: block
+        font-size: 12px
+        letter-spacing: 2px
+        font-weight: bold
+        background: #FAC921
+        color: white
+        text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.36)
+        padding: 15px 30px
+        margin-top: 25px
+        text-decoration: none
+        text-transform: uppercase
+        border-radius: 4px
+        transition: 0.5s
+        &:hover
+          background: rgba(0,0,0,0)
+          color: #FAC921
+          box-shadow: inset 0 0 0 3px #FAC921
+  .services
+    height: 100vh
+    padding: 100px 0 0 0
+    background-color: #fff
+    &__wrap
+      
+        
+
+@media screen and ( max-width: 767px ) 
+  body.lock
+    overflow: hidden
+  .header
+    &__top
+      height: 50px
+      &::before 
+      display: block !important
+      z-index: 4 !important
+      &_wrap
+        padding: 10px 15px !important
+        &_logo
+          height: 32px !important
+          z-index: 4 !important
+        &_nav
+          // display: none !important
+          display: flex
+          flex-direction: column
+          justify-content: center
+          align-items: center 
+          position: fixed        
+          top: -100%
+          left: 0
+          z-index: 3
+          padding-top: 50px
+          width: 100%
+          height: 100% !important
+          background-color: #FAC921
+          transition: all .5s ease 0s
+          &.active
+            top: 0
+          a
+            color: white !important
+            font-size: 16px !important
+            margin-bottom: 10px
+            margin-right: 0 !important
+            &::before
+              border-color: black !important
+            &.active, &.active:before
+              color: black !important
+            &:hover
+              color: black !important
+    &__burger
+      display: block !important
+      position: relative
+      width: 30px
+      height: 20px
+      cursor: pointer
+      z-index: 4 !important
+      span
+        position: absolute
+        background-color: #fff
+        left: 0
+        top: 9px
+        width: 100%
+        height: 2px
+        transition: all .3s ease 0s
+      &::before, &::after
+        content: ""
+        background-color: #fff
+        position: absolute
+        width: 100%
+        height: 2px
+        left: 0
+        transition: all .3s ease 0s
+      &::before
+        top: 0
+      &::after      
+        bottom: 0
+      &.active
+        &::before
+          transform: rotate(45deg)
+          top: 9px
+        &::after
+          transform: rotate(-45deg)
+          bottom: 9px
+        span
+          transform: scale(0)
+    &__main
+      padding: 0 15px !important
+      h1  
+        font-size: 8vw !important
+      h2
+        font-size: 8px !important
+      a
+        font-size: 8px !important
+        padding: 10px 20px !important
+        margin-top: 10px !important
+  .services
+    &__wrap
