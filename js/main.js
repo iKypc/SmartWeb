@@ -4,15 +4,17 @@ $(document).ready(function(){
         $('body').toggleClass('lock');
     });
 
-    $('a[href^="#"]').click(function(){
-        var target = $(this).attr('href');
-        $('html, body').animate({
-            scrollTop: $(target).offset().top
-        }, 500);
-    });
+    // $('a[href^="#"]').click(function(){
+    //     var target = $(this).attr('href');
+    //     $('html, body').animate({
+    //         scrollTop: $(target).offset().top
+    //     }, 500);
+    // });
 
 
 });
+
+$('body').scrollspy({ target: '.navbar-example' })
 
 // window.addEventListener('scroll', () => {
 //     let scrollDistance = window.scrollY;
