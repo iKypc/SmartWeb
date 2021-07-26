@@ -77,7 +77,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 15px;
+  padding: 15px 20px;
+  overflow: hidden;
 }
 
 .wrapper .header__top_wrap_logo {
@@ -105,9 +106,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   white-space: nowrap;
 }
 
@@ -206,8 +204,6 @@ body {
   font-size: 12px;
   letter-spacing: 2px;
   font-weight: bold;
-  background: #FAC921;
-  color: white;
   text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.36);
   padding: 15px 30px;
   margin-top: 25px;
@@ -216,18 +212,20 @@ body {
   border-radius: 4px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-}
-
-.wrapper .header__main a:hover {
   background: rgba(0, 0, 0, 0);
   color: #FAC921;
   -webkit-box-shadow: inset 0 0 0 3px #FAC921;
           box-shadow: inset 0 0 0 3px #FAC921;
 }
 
+.wrapper .header__main a:hover {
+  background: #FAC921;
+  color: white;
+}
+
 .wrapper .services {
   min-height: 100vh;
-  padding: 100px 0 0 0;
+  padding: 15vh 0 0 0;
   background-color: #f4f5f7;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -271,8 +269,12 @@ body {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -281,18 +283,13 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   background-color: #fff;
+  width: 500px;
   margin: 20px;
-  padding-bottom: 15px;
-  max-height: 400px;
-  width: 350px;
+  padding: 15px;
   -webkit-box-shadow: 1px 1px 5px #4d4d4d8c;
           box-shadow: 1px 1px 5px #4d4d4d8c;
   border-radius: 10px;
@@ -300,9 +297,21 @@ body {
   transition: 0.5s ease;
 }
 
-.wrapper .services__main:hover {
-  -webkit-transform: translateY(-10px);
-          transform: translateY(-10px);
+.wrapper .services__main_wrap {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper .services__main img {
+  width: 200px;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  overflow: hidden;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 .wrapper .services__main__title {
@@ -320,19 +329,18 @@ body {
   font-size: 17px;
   line-height: 18px;
   overflow: hidden;
-  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-indent: 5px;
 }
 
 .wrapper .services__main__btn {
   width: 100%;
   height: 50px;
+  padding: 0 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -349,21 +357,48 @@ body {
   display: block;
   height: 40px;
   line-height: 40px;
-  width: 50%;
+  white-space: nowrap;
+  padding: 0 15px;
   font-size: 14px;
   letter-spacing: 2px;
   vertical-align: middle;
   font-weight: bold;
-  background: #FAC921;
-  -webkit-box-shadow: 1px 1px 5px #4d4d4d8c;
-          box-shadow: 1px 1px 5px #4d4d4d8c;
-  color: #4d4d4d;
   text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.36);
   text-decoration: none;
   text-transform: uppercase;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   border-radius: 5px;
+  color: #4d4d4d;
+  -webkit-box-shadow: inset 0 0 0 3px #4d4d4d;
+          box-shadow: inset 0 0 0 3px #4d4d4d;
+}
+
+.wrapper .services__main__btn a:hover {
+  -webkit-box-shadow: inset 0 0 0 3px #FAC921;
+          box-shadow: inset 0 0 0 3px #FAC921;
+  color: #FAC921;
+}
+
+.wrapper .services__main__btn p {
+  border: none;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  width: 50%;
+  padding: 0 15px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  vertical-align: middle;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.36);
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border-radius: 5px;
+  color: #4d4d4d;
 }
 
 @media screen and (max-width: 767px) {
@@ -385,9 +420,6 @@ body {
     z-index: 4 !important;
   }
   .header__top_wrap_nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -402,12 +434,13 @@ body {
     top: -100%;
     left: 0;
     z-index: 3;
-    padding-top: 50px;
+    padding-top: 70px;
     width: 100%;
-    height: 100% !important;
+    height: 100vh !important;
     background-color: #FAC921;
     -webkit-transition: all .5s ease 0s;
     transition: all .5s ease 0s;
+    overflow: scroll;
   }
   .header__top_wrap_nav.active {
     top: 0;
@@ -490,6 +523,58 @@ body {
     font-size: 8px !important;
     padding: 10px 20px !important;
     margin-top: 10px !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .services h2 {
+    font-size: 4vw !important;
+  }
+  .services__main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .services__main img {
+    width: 100% !important;
+    height: 30vw !important;
+    -o-object-fit: contain;
+       object-fit: contain;
+    overflow: hidden;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+  }
+  .services__main__title {
+    font-size: 3vw;
+  }
+  .services__main__desc {
+    text-align: center;
+    font-size: 3vw !important;
+  }
+  .services__main__btn p {
+    font-size: 3vw !important;
+  }
+  .services__main__btn a {
+    font-size: 3vw !important;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .services h2 {
+    font-size: 4.5vw !important;
+  }
+  .services__main__title {
+    font-size: 3.5vw !important;
+  }
+  .services__main__desc {
+    font-size: 3.5vw !important;
+  }
+  .services__main__btn p {
+    font-size: 3.5vw !important;
+  }
+  .services__main__btn a {
+    font-size: 3.5vw !important;
   }
 }
 /*# sourceMappingURL=style.css.map */

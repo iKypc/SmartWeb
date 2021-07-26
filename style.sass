@@ -19,9 +19,6 @@ body
 
   
 
-
-  
-
 .container
   max-width: 1180px
   margin: 0px auto
@@ -69,7 +66,8 @@ body
         display: flex
         justify-content: space-between
         align-items: center
-        padding: 15px 
+        padding: 15px 20px
+        overflow: hidden        
         &_logo
           height: 50px
           margin-right: 15px
@@ -84,7 +82,7 @@ body
           height: 50px
           display: flex
           align-items: center
-          justify-content: center
+          //justify-content: center
           white-space: nowrap
           a
             font-size: 12px
@@ -161,9 +159,7 @@ body
         display: block
         font-size: 12px
         letter-spacing: 2px
-        font-weight: bold
-        background: #FAC921
-        color: white
+        font-weight: bold        
         text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.36)
         padding: 15px 30px
         margin-top: 25px
@@ -171,13 +167,15 @@ body
         text-transform: uppercase
         border-radius: 4px
         transition: 0.5s
+        background: rgba(0,0,0,0)
+        color: #FAC921        
+        box-shadow: inset 0 0 0 3px #FAC921
         &:hover
-          background: rgba(0,0,0,0)
-          color: #FAC921
-          box-shadow: inset 0 0 0 3px #FAC921
+          background: #FAC921
+          color: white
   .services
     min-height: 100vh
-    padding: 100px 0 0 0
+    padding: 15vh 0 0 0
     background-color: #f4f5f7
     display: flex
     justify-content: center
@@ -196,23 +194,29 @@ body
     &__wrap
       display: flex
       width: 100%
-      justify-content: space-around
+      justify-content: center
+      align-items: stretch
       flex-wrap: wrap
       
     &__main
       display: flex
-      flex-direction: column
+      flex-wrap: 
       justify-content: center
       background-color: #fff
+      width: 500px 
       margin: 20px
-      padding-bottom: 15px
-      max-height: 400px
-      width: 350px
+      padding: 15px
       box-shadow: 1px 1px 5px #4d4d4d8c 
       border-radius: 10px
       transition: 0.5s ease
-      &:hover
-        transform: translateY(-10px)
+      &_wrap
+        flex-direction: column
+      img
+        width: 200px
+        height: 100%
+        object-fit: contain
+        overflow: hidden
+        transition: 0.5s ease
       &__title
         text-transform: uppercase
         font-weight: bold
@@ -228,36 +232,57 @@ body
         // border-bottom: solid 2px #4d4d4d3a 
         // border-top: solid 2px #4d4d4d3a 
         overflow: hidden
-        text-align: center
         display: flex
         align-items: center
-        text-indent: 5px
-
       &__btn
         width: 100%
         height: 50px
+        padding: 0 10px
         display: flex
         justify-content: center
         align-items: center
         text-align: center
+        
         a
           display: block
           height: 40px
           line-height: 40px
-          width: 50%
+          //width: 50%
+          white-space: nowrap
+          padding: 0 15px
           font-size: 14px
           letter-spacing: 2px
           vertical-align: middle
           font-weight: bold
-          background: #FAC921
-          box-shadow: 1px 1px 5px #4d4d4d8c 
-          color:#4d4d4d
           text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.36)
           text-decoration: none
           text-transform: uppercase
           transition: 0.5s
           border-radius: 5px
-          
+          color:#4d4d4d      
+          box-shadow: inset 0 0 0 3px #4d4d4d    
+          &:hover
+            //background: #FAC921
+            box-shadow: inset 0 0 0 3px #FAC921
+            color: #FAC921
+        p
+          border: none
+          display: block
+          height: 40px
+          line-height: 40px
+          width: 50%
+          padding: 0 15px
+          font-size: 16px
+          letter-spacing: 2px
+          white-space: nowrap
+          vertical-align: middle
+          font-weight: bold
+          text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.36)
+          text-decoration: none
+          text-transform: uppercase
+          transition: 0.5s
+          border-radius: 5px
+          color:#4d4d4d      
        
         
 
@@ -276,8 +301,6 @@ body
           height: 32px !important
           z-index: 4 !important
         &_nav
-          // display: none !important
-          display: flex
           flex-direction: column
           justify-content: center
           align-items: center 
@@ -285,11 +308,12 @@ body
           top: -100%
           left: 0
           z-index: 3
-          padding-top: 50px
+          padding-top: 70px
           width: 100%
-          height: 100% !important
+          height: 100vh !important
           background-color: #FAC921
-          transition: all .5s ease 0s
+          transition: all .5s ease 0s          
+          overflow: scroll
           &.active
             top: 0
           a
@@ -353,4 +377,41 @@ body
         margin-top: 10px !important
   .services
     &__wrap
-      
+@media screen and ( max-width: 600px )
+  .services
+    h2
+      font-size: 4vw !important
+    &__main
+      flex-direction: column
+      img
+        width: 100% !important
+        height: 30vw !important
+        object-fit: contain
+        overflow: hidden
+        transition: 0.5s ease
+      &__title
+        font-size: 3vw
+      &__desc
+        text-align: center
+        font-size: 3vw !important
+      &__btn
+        p
+          font-size: 3vw !important
+        a
+          font-size: 3vw !important
+        
+@media screen and ( max-width: 450px )
+  .services
+    h2
+      font-size: 4.5vw !important
+    &__main
+      img
+      &__title
+        font-size: 3.5vw !important
+      &__desc
+        font-size: 3.5vw !important
+      &__btn
+        p
+          font-size: 3.5vw !important
+        a
+          font-size: 3.5vw !important
